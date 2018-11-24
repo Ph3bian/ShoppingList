@@ -8,7 +8,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Output() featureSelected = new EventEmitter<string>();
-  
+  show: boolean = false;
   constructor() { }
 
   ngOnInit() {
@@ -16,5 +16,8 @@ export class HeaderComponent implements OnInit {
   onSelect(feature: string) {
     console.log('clicked')
     this.featureSelected.emit(feature)
+  }
+  dropdownToggle() {
+    this.show = !this.show
   }
 }

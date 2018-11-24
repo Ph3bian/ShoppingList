@@ -11,11 +11,11 @@
         <li class="nav-item">
           <a class="nav-link"  style="cursor:pointer" (click)="onSelect('shopping-list')">Shopping list </a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item dropdown" appDropdown>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" (click)="dropdownToggle()" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Dropdown
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown"[ngClass]="{'show':show}">
             <a class="dropdown-item" href="#">Save</a>
             <a class="dropdown-item" href="#">Fetch</a>
             <div class="dropdown-divider"></div>

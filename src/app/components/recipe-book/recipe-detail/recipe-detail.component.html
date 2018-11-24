@@ -1,6 +1,6 @@
-<div class="row">
+<div class="row mt-5">
   <div class="col-12">
-    <img src="{{recipe.imagePath}}" style="max-height: 70px" class="" alt="">
+    <img src="{{recipe.imagePath}}" style="width:120px" class="" alt="">
   </div>
 </div>
 <div class="row">
@@ -10,23 +10,25 @@
 </div>
 <div class="row">
   <div class="col-12">
-    <div class="btn-group">
-      <button class="btn btn-primary dropdown-toggle"> Manage Recipe <span class="caret"></span></button>
-      <ul class="dropdown-menu">
+    <li class="btn-group"  appDropdown>
+      <button class="btn btn-primary dropdown-toggle" (click)="dropdownToggle('tell me more')" > Manage Recipe <span class="caret"></span></button>
+      <ul class="dropdown-menu" [ngClass]="{'show':show}">
         <li> <a href=""> Add</a></li>
         <li> <a href=""> Edit</a></li>
         <li> <a href=""> Delete</a></li>
       </ul>
-    </div>
+    </li>
   </div>
 </div>
 <div class="row">
-  <div class="col-12">
+  <div class="col-12 py-4">
     {{recipe.description}}
   </div>
 </div>
 <div class="row">
   <div class="col-12">
-    Ingredients
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">{{ingredient.name}} ({{ingredient.amount}})</li>
+</ul>
   </div>
 </div>
